@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-900 dark:bg-stone-900 dark:text-stone-50;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute -top-full left-4 z-[100] bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium;
+    @apply focus:top-4 transition-all;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-6xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Prose customizations for MDX content */
+  .prose-blog {
+    @apply prose prose-lg prose-stone dark:prose-invert;
+    @apply prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-a:underline-offset-2;
+    @apply prose-headings:font-bold;
+    @apply prose-img:rounded-xl;
+    @apply max-w-none;
+  }
+
+  .prose-blog blockquote {
+    @apply border-l-4 border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/10 p-4 rounded-r-lg not-italic;
+  }
+
+  .prose-blog pre {
+    @apply rounded-xl bg-stone-900 dark:bg-stone-950 overflow-x-auto;
+  }
+
+  .prose-blog code:not(pre code) {
+    @apply bg-stone-100 dark:bg-stone-800 px-1.5 py-0.5 rounded text-sm font-mono before:content-none after:content-none;
+  }
+
+  .prose-blog table {
+    @apply border-collapse;
+  }
+
+  .prose-blog th,
+  .prose-blog td {
+    @apply border border-stone-200 dark:border-stone-700;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-reduce\:transition-none {
+      transition: none !important;
+    }
+    .animate-pulse {
+      animation: none;
+    }
+  }
+}

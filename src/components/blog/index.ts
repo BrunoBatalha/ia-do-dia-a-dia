@@ -1,0 +1,5 @@
+export { Callout } from './callout'
+export { ExplicaConceito } from './explica-conceito'
+export { QuizRapido } from './quiz-rapido'
+export { AntesDepois } from './antes-depois'
+export { Destaque } from './destaque'
