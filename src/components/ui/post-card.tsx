@@ -32,7 +32,7 @@ export function PostCard({ post, variant = 'default', className }: PostCardProps
           )}
           <div className="p-6">
             <div className="flex items-center gap-3 mb-3">
-              <CategoryBadge category={frontmatter.category} />
+              <CategoryBadge category={frontmatter.category} asLink={false} />
               <span className="text-xs text-stone-500 dark:text-stone-400">
                 {formatDate(frontmatter.date)}
               </span>
@@ -67,7 +67,7 @@ export function PostCard({ post, variant = 'default', className }: PostCardProps
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <CategoryBadge category={frontmatter.category} className="mb-1" />
+          <CategoryBadge category={frontmatter.category} asLink={false} className="mb-1" />
           <h3 className="text-sm font-bold text-stone-900 dark:text-stone-50 line-clamp-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">
             {frontmatter.title}
           </h3>
@@ -95,7 +95,7 @@ export function PostCard({ post, variant = 'default', className }: PostCardProps
         )}
         <div className="p-5 flex flex-col flex-1">
           <div className="mb-3">
-            <CategoryBadge category={frontmatter.category} />
+            <CategoryBadge category={frontmatter.category} asLink={false} />
           </div>
           <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50 mb-2 line-clamp-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200 flex-1">
             {frontmatter.title}
