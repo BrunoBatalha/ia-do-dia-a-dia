@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <head>
+      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <Script
           id="theme-init"
           strategy="beforeInteractive"
@@ -65,8 +65,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
           <a href="#main-content" className="skip-link">
             Pular para o conteudo
